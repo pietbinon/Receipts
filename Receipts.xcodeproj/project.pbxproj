@@ -65,11 +65,7 @@
 		A260C28A1E68859D00F5F84F = {
 			isa = PBXGroup;
 			children = (
-				A260C2C11E68862500F5F84F /* UI */,
-				A260C2C01E68861F00F5F84F /* Control */,
-				A260C2BF1E68861D00F5F84F /* Model */,
-				A260C2BE1E68861800F5F84F /* View */,
-				A260C2961E68859D00F5F84F /* Supporting Files */,
+				A260C2C21E68AF2A00F5F84F /* Receipts */,
 				A260C2B21E68859E00F5F84F /* ReceiptsTests */,
 				A260C2941E68859D00F5F84F /* Products */,
 			);
@@ -137,6 +133,18 @@
 				A260C29F1E68859D00F5F84F /* Main.storyboard */,
 			);
 			name = UI;
+			sourceTree = "<group>";
+		};
+		A260C2C21E68AF2A00F5F84F /* Receipts */ = {
+			isa = PBXGroup;
+			children = (
+				A260C2C11E68862500F5F84F /* UI */,
+				A260C2C01E68861F00F5F84F /* Control */,
+				A260C2BF1E68861D00F5F84F /* Model */,
+				A260C2BE1E68861800F5F84F /* View */,
+				A260C2961E68859D00F5F84F /* Supporting Files */,
+			);
+			name = Receipts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
