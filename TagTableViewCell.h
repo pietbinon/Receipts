@@ -1,5 +1,5 @@
 //
-//  ReceiptTableViewCell.h
+//  TagTableViewCell.h
 //  Receipts
 //
 //  Created by Dave Augerinos on 2017-03-02.
@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "Receipts+CoreDataModel.h"
 
-@interface ReceiptTableViewCell : UITableViewCell
+@interface TagTableViewCell : UITableViewCell
 
-- (void)configureReceiptCell:(Receipt *)receipt;
+- (void)configureTagCell:(Tag *)tag;
 
 @end

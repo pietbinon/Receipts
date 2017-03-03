@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CoreDataManager.h"
 
 @interface ReceiptViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+
+@property (nonatomic, strong) CoreDataManager *coreDataManager;
 
 @end

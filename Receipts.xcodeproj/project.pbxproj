@@ -17,6 +17,8 @@
 		A260C2C51E68B59700F5F84F /* ReceiptViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A260C2C41E68B59700F5F84F /* ReceiptViewController.m */; };
 		A260C2C81E68B5B300F5F84F /* AddReceiptViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A260C2C71E68B5B300F5F84F /* AddReceiptViewController.m */; };
 		A260C2CB1E68BEC000F5F84F /* ReceiptTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A260C2CA1E68BEC000F5F84F /* ReceiptTableViewCell.m */; };
+		A260C2D11E68DABA00F5F84F /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A260C2D01E68DABA00F5F84F /* CoreDataManager.m */; };
+		A260C2D41E692A8E00F5F84F /* TagTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A260C2D31E692A8E00F5F84F /* TagTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,10 @@
 		A260C2C71E68B5B300F5F84F /* AddReceiptViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddReceiptViewController.m; sourceTree = "<group>"; };
 		A260C2C91E68BEC000F5F84F /* ReceiptTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceiptTableViewCell.h; sourceTree = "<group>"; };
 		A260C2CA1E68BEC000F5F84F /* ReceiptTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceiptTableViewCell.m; sourceTree = "<group>"; };
+		A260C2CF1E68DABA00F5F84F /* CoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
+		A260C2D01E68DABA00F5F84F /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
+		A260C2D21E692A8E00F5F84F /* TagTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagTableViewCell.h; sourceTree = "<group>"; };
+		A260C2D31E692A8E00F5F84F /* TagTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +117,8 @@
 			children = (
 				A260C2C91E68BEC000F5F84F /* ReceiptTableViewCell.h */,
 				A260C2CA1E68BEC000F5F84F /* ReceiptTableViewCell.m */,
+				A260C2D21E692A8E00F5F84F /* TagTableViewCell.h */,
+				A260C2D31E692A8E00F5F84F /* TagTableViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -130,6 +138,8 @@
 			children = (
 				A260C2C31E68B59700F5F84F /* ReceiptViewController.h */,
 				A260C2C41E68B59700F5F84F /* ReceiptViewController.m */,
+				A260C2CF1E68DABA00F5F84F /* CoreDataManager.h */,
+				A260C2D01E68DABA00F5F84F /* CoreDataManager.m */,
 				A260C2C61E68B5B300F5F84F /* AddReceiptViewController.h */,
 				A260C2C71E68B5B300F5F84F /* AddReceiptViewController.m */,
 			);
@@ -260,8 +270,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A260C2CB1E68BEC000F5F84F /* ReceiptTableViewCell.m in Sources */,
+				A260C2D11E68DABA00F5F84F /* CoreDataManager.m in Sources */,
 				A260C2A41E68859D00F5F84F /* Receipts.xcdatamodeld in Sources */,
 				A260C2C81E68B5B300F5F84F /* AddReceiptViewController.m in Sources */,
+				A260C2D41E692A8E00F5F84F /* TagTableViewCell.m in Sources */,
 				A260C2C51E68B59700F5F84F /* ReceiptViewController.m in Sources */,
 				A260C29B1E68859D00F5F84F /* AppDelegate.m in Sources */,
 				A260C2981E68859D00F5F84F /* main.m in Sources */,
