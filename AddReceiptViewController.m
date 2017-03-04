@@ -8,7 +8,6 @@
 
 #import "AddReceiptViewController.h"
 #import "ReceiptViewController.h"
-#import "Receipt+CoreDataClass.h"
 #import "TagTableViewCell.h"
 
 @interface AddReceiptViewController ()
@@ -19,7 +18,8 @@
 @property (weak, nonatomic) IBOutlet UITextView *descriptionTextView;
 @property (weak, nonatomic) IBOutlet UIDatePicker *receiptDatePicker;
 @property (weak, nonatomic) IBOutlet UITableView *tagTableView;
-
+@property (strong, nonatomic) NSMutableArray *cellSelected;
+@property (strong, nonatomic) NSMutableSet *tagSelected;
 
 @end
 
@@ -37,6 +37,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.coreDataManager = [CoreDataManager sharedInstance];
+    self.cellSelected = [NSMutableArray array];
+    self.tagSelected = [NSMutableSet set];
     [self configureView];
 }
 
@@ -57,7 +59,7 @@
         
         NSEntityDescription *entity = [NSEntityDescription entityForName:@"Receipt" inManagedObjectContext:self.coreDataManager.managedObjectContext];
         
-        NSManagedObject *receipt = [[NSManagedObject alloc] initWithEntity:entity insertIntoManagedObjectContext:self.coreDataManager.managedObjectContext];
+        Receipt *receipt = [[Receipt alloc] initWithEntity:entity insertIntoManagedObjectContext:self.coreDataManager.managedObjectContext];
         
         NSDecimalNumber *amount = [[NSDecimalNumber alloc] initWithString: self.amountTextField.text];
         NSDate *date = [self.receiptDatePicker date];
@@ -65,6 +67,21 @@
         [receipt setValue:amount forKey:@"amount"];
         [receipt setValue:self.descriptionTextView.text forKey:@"note"];
         [receipt setValue:date forKey:@"timeStamp"];
+        
+        NSPredicate *myPredicate;
+        NSMutableArray *tagsArray = [[NSMutableArray alloc] init];
+        
+        for (NSString *tagName in self.tagSelected) {
+            
+            myPredicate = [NSPredicate predicateWithFormat:@"tagName = %@", tagName];
+            [tagsArray addObject:[[self.coreDataManager fetchTagsWithPredicate: myPredicate] mutableCopy]];
+        }
+        
+        for (Tag *myTag in tagsArray) {
+
+//            [myTag addTagToReceiptObject:receipt];
+            [receipt addReceiptToTagObject:myTag];
+        }
         
         [self.coreDataManager.managedObjectContext save:nil];
     }
@@ -80,9 +97,6 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    NSLog(@"additional view number of row");
-    NSLog(@"%lu", (unsigned long)[[self.coreDataManager fetchTags] count]);
-    
     return [[self.coreDataManager fetchTags] count];
 }
 
@@ -96,8 +110,41 @@
     
     [cell configureTagCell:myTag];
     
+    if ([self.cellSelected containsObject:indexPath])
+    {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }
+    else
+    {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
+    
     return cell;
 }
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+
+    NSArray *tagsArray = [self.coreDataManager fetchTags];
+    
+    Tag *myTag = tagsArray[indexPath.row];
+    
+    if ([self.cellSelected containsObject:indexPath])
+    {
+        [self.tagSelected removeObject:myTag.tagName];
+        [self.cellSelected removeObject:indexPath];
+    }
+    else
+    {
+        [self.tagSelected addObject:myTag.tagName];
+        [self.cellSelected addObject:indexPath];
+    }
+
+    [self.tagTableView reloadData];
+}
+
 
 #pragma mark - TextField -
 

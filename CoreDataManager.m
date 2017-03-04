@@ -28,8 +28,6 @@
         
         NSEntityDescription *entity = [NSEntityDescription entityForName:@"Tag" inManagedObjectContext:self.managedObjectContext];
         
-       // NSManagedObject *tag = [[NSManagedObject alloc] initWithEntity:entity insertIntoManagedObjectContext:self.managedObjectContext];
-        
         Tag *personal = [[Tag alloc] initWithEntity:entity insertIntoManagedObjectContext:self.managedObjectContext];
         
         personal.tagName = @"Personal";
@@ -41,10 +39,6 @@
         Tag *business = [[Tag alloc] initWithEntity:entity insertIntoManagedObjectContext:self.managedObjectContext];
         
         business.tagName = @"Business";
-        
-       // NSArray *tags = @[personal, family, business];
-        
-       // [tag setValue:tags forKey:@"Tag"];
         
         [self.managedObjectContext save:nil];
     }
@@ -71,5 +65,14 @@
     return tags;
 }
 
+
+- (NSArray *)fetchTagsWithPredicate:(NSPredicate *)predicate {
+ 
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Tag"];
+    NSArray *tagsArray = [self.managedObjectContext executeFetchRequest:fetchRequest error:nil];
+    NSArray *resultsArray = [tagsArray filteredArrayUsingPredicate:predicate];
+    
+    return resultsArray;
+}
 
 @end

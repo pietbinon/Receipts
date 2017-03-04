@@ -29,7 +29,7 @@
     
     self.amountLabel.text = [formatDollars stringFromNumber:self.myReceipt.amount];
 
-    self.descriptionLabel.text = self.myReceipt.description;
+    self.descriptionLabel.text = self.myReceipt.note;
     
     NSDateFormatter *format = [[NSDateFormatter alloc] init];
     [format setDateFormat:@"MMMM dd, yyyy"];

@@ -32,6 +32,8 @@ static NSString *const addReceiptVCSegueIdentifier = @"addReceiptVC";
 
 - (void)viewWillAppear:(BOOL)animated {
     
+    [super viewWillAppear:YES];
+    
     NSArray *tagsArray = [self.coreDataManager fetchTags];
     
     for (Tag *myTag in tagsArray) {
@@ -44,7 +46,6 @@ static NSString *const addReceiptVCSegueIdentifier = @"addReceiptVC";
         
         [self.receiptsByTagsArray addObject:receiptsArray];
     }
-    
     
     [self.receiptTableView reloadData];
 }
@@ -61,33 +62,16 @@ static NSString *const addReceiptVCSegueIdentifier = @"addReceiptVC";
     [self performSegueWithIdentifier:addReceiptVCSegueIdentifier sender:self];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 #pragma mark <UICollectionViewDataSource>
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
-    NSLog(@"number of section");
-    NSLog(@"%lu", (unsigned long)[[self.coreDataManager fetchTags] count]);
-    
     return [[self.coreDataManager fetchTags] count];
-    
-    
 }
 
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
-    NSLog(@"number of row");
-    NSLog(@"%lu", (unsigned long)[self.receiptsByTagsArray[section] count]);
     
     return [self.receiptsByTagsArray[section] count];
 }

@@ -17,5 +17,6 @@
 - (void)createTag;
 - (NSArray *)fetchReceipts;
 - (NSArray *)fetchTags;
+- (NSArray *)fetchTagsWithPredicate:(NSPredicate *)predicate;
 
 @end
