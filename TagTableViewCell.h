@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Receipts+CoreDataModel.h"
+//#import "Receipts+CoreDataModel.h"
+#import "Tag+CoreDataClass.h"
+#import "Receipt+CoreDataClass.h"
 
 @interface TagTableViewCell : UITableViewCell
 

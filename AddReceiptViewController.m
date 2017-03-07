@@ -9,6 +9,8 @@
 #import "AddReceiptViewController.h"
 #import "ReceiptViewController.h"
 #import "TagTableViewCell.h"
+#import "Tag+CoreDataClass.h"
+#import "Receipt+CoreDataClass.h"
 
 @interface AddReceiptViewController ()
 
@@ -74,12 +76,11 @@
         for (NSString *tagName in self.tagSelected) {
             
             myPredicate = [NSPredicate predicateWithFormat:@"tagName = %@", tagName];
-            [tagsArray addObject:[[self.coreDataManager fetchTagsWithPredicate: myPredicate] mutableCopy]];
+            [tagsArray addObjectsFromArray:[[self.coreDataManager fetchTagsWithPredicate: myPredicate] mutableCopy]];
         }
         
         for (Tag *myTag in tagsArray) {
 
-//            [myTag addTagToReceiptObject:receipt];
             [receipt addReceiptToTagObject:myTag];
         }
         

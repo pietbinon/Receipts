@@ -126,6 +126,8 @@
 		A260C2BF1E68861D00F5F84F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A260C2CF1E68DABA00F5F84F /* CoreDataManager.h */,
+				A260C2D01E68DABA00F5F84F /* CoreDataManager.m */,
 				A260C2991E68859D00F5F84F /* AppDelegate.h */,
 				A260C29A1E68859D00F5F84F /* AppDelegate.m */,
 				A260C2A21E68859D00F5F84F /* Receipts.xcdatamodeld */,
@@ -138,8 +140,6 @@
 			children = (
 				A260C2C31E68B59700F5F84F /* ReceiptViewController.h */,
 				A260C2C41E68B59700F5F84F /* ReceiptViewController.m */,
-				A260C2CF1E68DABA00F5F84F /* CoreDataManager.h */,
-				A260C2D01E68DABA00F5F84F /* CoreDataManager.m */,
 				A260C2C61E68B5B300F5F84F /* AddReceiptViewController.h */,
 				A260C2C71E68B5B300F5F84F /* AddReceiptViewController.m */,
 			);
@@ -475,6 +475,7 @@
 				A260C2BA1E68859E00F5F84F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A260C2BB1E68859E00F5F84F /* Build configuration list for PBXNativeTarget "ReceiptsTests" */ = {
 			isa = XCConfigurationList;
@@ -483,6 +484,7 @@
 				A260C2BD1E68859E00F5F84F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

@@ -8,7 +8,9 @@
 
 #import "ReceiptViewController.h"
 #import "ReceiptTableViewCell.h"
-#import "Receipts+CoreDataModel.h"
+//#import "Receipts+CoreDataModel.h"
+#import "Tag+CoreDataClass.h"
+#import "Receipt+CoreDataClass.h"
 
 @interface ReceiptViewController ()
 
@@ -33,6 +35,8 @@ static NSString *const addReceiptVCSegueIdentifier = @"addReceiptVC";
 - (void)viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:YES];
+    
+    self.receiptsByTagsArray = [NSMutableArray array];
     
     NSArray *tagsArray = [self.coreDataManager fetchTags];
     

@@ -7,7 +7,9 @@
 //
 
 #import "CoreDataManager.h"
-#import "Receipts+CoreDataModel.h"
+//#import "Receipts+CoreDataModel.h"
+#import "Tag+CoreDataClass.h"
+#import "Receipt+CoreDataClass.h"
 
 @implementation CoreDataManager
 
