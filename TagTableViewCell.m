@@ -2,11 +2,13 @@
 //  TagTableViewCell.m
 //  Receipts
 //
-//  Created by Dave Augerinos on 2017-03-02.
-//  Copyright © 2017 Dave Augerinos. All rights reserved.
+//  Created by Pierre Binon on 2017-03-27.
+//  Copyright © 2017 Pierre Binon. All rights reserved.
 //
 
 #import "TagTableViewCell.h"
+
+
 
 @interface TagTableViewCell ()
 
@@ -14,6 +16,8 @@
 @property (strong, nonatomic) Tag *myTag;
 
 @end
+
+
 
 @implementation TagTableViewCell
 

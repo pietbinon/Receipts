@@ -2,8 +2,8 @@
 //  AddReceiptViewController.m
 //  Receipts
 //
-//  Created by Dave Augerinos on 2017-03-02.
-//  Copyright © 2017 Dave Augerinos. All rights reserved.
+//  Created by Pierre Binon on 2017-03-27.
+//  Copyright © 2017 Pierre Binon. All rights reserved.
 //
 
 #import "AddReceiptViewController.h"
@@ -11,6 +11,9 @@
 #import "TagTableViewCell.h"
 #import "Tag+CoreDataClass.h"
 #import "Receipt+CoreDataClass.h"
+
+
+
 
 @interface AddReceiptViewController ()
 
@@ -24,6 +27,9 @@
 @property (strong, nonatomic) NSMutableSet *tagSelected;
 
 @end
+
+
+
 
 @implementation AddReceiptViewController
 
@@ -44,16 +50,19 @@
     [self configureView];
 }
 
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 - (IBAction)saveReceiptButtonPressed:(UIButton *)sender {
 
     [self addNewReceipt];
     [self.navigationController popViewControllerAnimated:YES];
 }
+
 
 - (void)addNewReceipt {
     
@@ -89,6 +98,8 @@
 }
 
 
+
+
 #pragma mark - Table View -
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -96,10 +107,12 @@
     return 1;
 }
 
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     return [[self.coreDataManager fetchTags] count];
 }
+
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -147,6 +160,10 @@
 }
 
 
+
+
+
+
 #pragma mark - TextField -
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
@@ -155,17 +172,20 @@
     return YES;
 }
 
+
 - (BOOL)textFieldShouldEndEditing:(UITextField *)textField {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(addNewReceipt) name:UITextFieldTextDidChangeNotification object:nil];
     
     return YES;
 }
 
+
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
     
     [self.view endEditing:YES];
 }
+
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
@@ -178,16 +198,18 @@
 }
 
 
-- (void)keyboardWillShow:(NSNotification *)notification
-{
+- (void)keyboardWillShow:(NSNotification *)notification {
+
     [self.view setFrame:CGRectMake(0,-110,self.view.frame.size.width,self.view.frame.size.height)];
     
 }
 
-- (void)keyboardWillHide:(NSNotification *)notification
-{
+
+- (void)keyboardWillHide:(NSNotification *)notification {
+
     [self.view setFrame:CGRectMake(0,0,self.view.frame.size.width,self.view.frame.size.height)];
 }
+
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     

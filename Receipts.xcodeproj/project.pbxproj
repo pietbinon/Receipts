@@ -13,7 +13,6 @@
 		A260C2A41E68859D00F5F84F /* Receipts.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A260C2A21E68859D00F5F84F /* Receipts.xcdatamodeld */; };
 		A260C2A61E68859D00F5F84F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A260C2A51E68859D00F5F84F /* Assets.xcassets */; };
 		A260C2A91E68859D00F5F84F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A260C2A71E68859D00F5F84F /* LaunchScreen.storyboard */; };
-		A260C2B41E68859E00F5F84F /* ReceiptsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A260C2B31E68859E00F5F84F /* ReceiptsTests.m */; };
 		A260C2C51E68B59700F5F84F /* ReceiptViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A260C2C41E68B59700F5F84F /* ReceiptViewController.m */; };
 		A260C2C81E68B5B300F5F84F /* AddReceiptViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A260C2C71E68B5B300F5F84F /* AddReceiptViewController.m */; };
 		A260C2CB1E68BEC000F5F84F /* ReceiptTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A260C2CA1E68BEC000F5F84F /* ReceiptTableViewCell.m */; };
@@ -42,8 +41,7 @@
 		A260C2A81E68859D00F5F84F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A260C2AA1E68859D00F5F84F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A260C2AF1E68859E00F5F84F /* ReceiptsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReceiptsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A260C2B31E68859E00F5F84F /* ReceiptsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReceiptsTests.m; sourceTree = "<group>"; };
-		A260C2B51E68859E00F5F84F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A260C2B51E68859E00F5F84F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ReceiptsTests/Info.plist; sourceTree = SOURCE_ROOT; };
 		A260C2C31E68B59700F5F84F /* ReceiptViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceiptViewController.h; sourceTree = "<group>"; };
 		A260C2C41E68B59700F5F84F /* ReceiptViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceiptViewController.m; sourceTree = "<group>"; };
 		A260C2C61E68B5B300F5F84F /* AddReceiptViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddReceiptViewController.h; sourceTree = "<group>"; };
@@ -78,7 +76,6 @@
 			isa = PBXGroup;
 			children = (
 				A260C2C21E68AF2A00F5F84F /* Receipts */,
-				A260C2B21E68859E00F5F84F /* ReceiptsTests */,
 				A260C2941E68859D00F5F84F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -96,20 +93,13 @@
 			isa = PBXGroup;
 			children = (
 				A260C2A51E68859D00F5F84F /* Assets.xcassets */,
+				A260C2A71E68859D00F5F84F /* LaunchScreen.storyboard */,
 				A260C2AA1E68859D00F5F84F /* Info.plist */,
 				A260C2971E68859D00F5F84F /* main.m */,
+				A260C2B51E68859E00F5F84F /* Info.plist */,
 			);
 			name = "Supporting Files";
 			path = Receipts;
-			sourceTree = "<group>";
-		};
-		A260C2B21E68859E00F5F84F /* ReceiptsTests */ = {
-			isa = PBXGroup;
-			children = (
-				A260C2B31E68859E00F5F84F /* ReceiptsTests.m */,
-				A260C2B51E68859E00F5F84F /* Info.plist */,
-			);
-			path = ReceiptsTests;
 			sourceTree = "<group>";
 		};
 		A260C2BE1E68861800F5F84F /* View */ = {
@@ -150,7 +140,6 @@
 			isa = PBXGroup;
 			children = (
 				A260C29F1E68859D00F5F84F /* Main.storyboard */,
-				A260C2A71E68859D00F5F84F /* LaunchScreen.storyboard */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -284,7 +273,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A260C2B41E68859E00F5F84F /* ReceiptsTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,7 +302,6 @@
 				A260C2A81E68859D00F5F84F /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			path = Receipts;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

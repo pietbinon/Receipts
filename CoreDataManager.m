@@ -2,19 +2,20 @@
 //  CoreDataManager.m
 //  Receipts
 //
-//  Created by Dave Augerinos on 2017-03-02.
-//  Copyright © 2017 Dave Augerinos. All rights reserved.
+//  Created by Pierre Binon on 2017-03-27.
+//  Copyright © 2017 Pierre Binon. All rights reserved.
 //
 
 #import "CoreDataManager.h"
-//#import "Receipts+CoreDataModel.h"
 #import "Tag+CoreDataClass.h"
 #import "Receipt+CoreDataClass.h"
 
+
+
 @implementation CoreDataManager
 
-+ (instancetype)sharedInstance
-{
++ (instancetype) sharedInstance {
+    
     static CoreDataManager *sharedInstance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -23,6 +24,7 @@
     });
     return sharedInstance;
 }
+
 
 - (void)createTag {
     
@@ -45,6 +47,7 @@
         [self.managedObjectContext save:nil];
     }
 }
+
 
 - (NSArray *)fetchReceipts {
     

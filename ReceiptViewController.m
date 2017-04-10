@@ -2,8 +2,8 @@
 //  ReceiptViewController.m
 //  Receipts
 //
-//  Created by Dave Augerinos on 2017-03-02.
-//  Copyright © 2017 Dave Augerinos. All rights reserved.
+//  Created by Pierre Binon on 2017-03-27.
+//  Copyright © 2017 Pierre Binon. All rights reserved.
 //
 
 #import "ReceiptViewController.h"
@@ -12,6 +12,9 @@
 #import "Tag+CoreDataClass.h"
 #import "Receipt+CoreDataClass.h"
 
+
+
+
 @interface ReceiptViewController ()
 
 @property (weak, nonatomic) IBOutlet UITableView *receiptTableView;
@@ -19,10 +22,14 @@
 
 @end
 
+
+
+
 @implementation ReceiptViewController
 
 static NSString *const reuseIdentifier = @"receiptCell";
 static NSString *const addReceiptVCSegueIdentifier = @"addReceiptVC";
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];

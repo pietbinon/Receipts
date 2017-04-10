@@ -2,11 +2,13 @@
 //  ReceiptTableViewCell.m
 //  Receipts
 //
-//  Created by Dave Augerinos on 2017-03-02.
-//  Copyright © 2017 Dave Augerinos. All rights reserved.
+//  Created by Pierre Binon on 2017-03-27.
+//  Copyright © 2017 Pierre Binon. All rights reserved.
 //
 
 #import "ReceiptTableViewCell.h"
+
+
 
 @interface ReceiptTableViewCell ()
 
@@ -16,6 +18,8 @@
 @property (strong, nonatomic) Receipt *myReceipt;
 
 @end
+
+
 
 @implementation ReceiptTableViewCell
 
@@ -37,10 +41,12 @@
     self.dateLabel.text = date;
 }
 
+
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
 }
+
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
